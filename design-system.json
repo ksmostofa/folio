@@ -1,0 +1,11 @@
+{
+  "preset": "b1VlJBjs",
+  "style": "base-luma",
+  "base": "base",
+  "font": "figtree",
+  "icons": "hugeicons",
+  "color": "neutral",
+  "rareui": "https://rareui.com",
+  "installedWith": "shadcn@4.21.1",
+  "initialized": true
+}

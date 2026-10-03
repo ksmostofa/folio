@@ -1,0 +1,242 @@
+[
+  {
+    "id": "en-form",
+    "source": "Synthetic fixture.\n---PAGE---\nBring a signed application form.",
+    "candidate": {
+      "kind": "document",
+      "page": 2,
+      "quote": "Bring a signed application form."
+    },
+    "expectedAccepted": true
+  },
+  {
+    "id": "en-date",
+    "source": "Synthetic fixture.\n---PAGE---\nSubmit the application by 20 November 2026.",
+    "candidate": {
+      "kind": "deadline",
+      "page": 2,
+      "quote": "Submit the application by 20 November 2026."
+    },
+    "expectedAccepted": true
+  },
+  {
+    "id": "en-conditional",
+    "source": "Synthetic fixture.\n---PAGE---\nIf you have more than 12 seats, bring a safety report.",
+    "candidate": {
+      "kind": "document",
+      "page": 2,
+      "quote": "If you have more than 12 seats, bring a safety report."
+    },
+    "expectedAccepted": true
+  },
+  {
+    "id": "en-step",
+    "source": "Synthetic fixture.\n---PAGE---\nKeep a copy of your application.",
+    "candidate": {
+      "kind": "step",
+      "page": 2,
+      "quote": "Keep a copy of your application."
+    },
+    "expectedAccepted": true
+  },
+  {
+    "id": "en-negation",
+    "source": "Synthetic fixture.\n---PAGE---\nDo not bring original identity documents.",
+    "candidate": {
+      "kind": "step",
+      "page": 2,
+      "quote": "Do not bring original identity documents."
+    },
+    "expectedAccepted": true
+  },
+  {
+    "id": "en-unknown",
+    "source": "Synthetic fixture.\n---PAGE---\nThe source does not state the processing time.",
+    "candidate": {
+      "kind": "step",
+      "page": 2,
+      "quote": "The source does not state the processing time."
+    },
+    "expectedAccepted": true
+  },
+  {
+    "id": "ja-form",
+    "source": "Synthetic fixture.\n---PAGE---\n署名した申請書を持参してください。",
+    "candidate": {
+      "kind": "document",
+      "page": 2,
+      "quote": "署名した申請書を持参してください。"
+    },
+    "expectedAccepted": true
+  },
+  {
+    "id": "ja-date",
+    "source": "Synthetic fixture.\n---PAGE---\n2026年11月20日までに申請書を提出してください。",
+    "candidate": {
+      "kind": "deadline",
+      "page": 2,
+      "quote": "2026年11月20日までに申請書を提出してください。"
+    },
+    "expectedAccepted": true
+  },
+  {
+    "id": "ja-conditional",
+    "source": "Synthetic fixture.\n---PAGE---\n座席数が12席を超える場合、安全検査報告書を持参してください。",
+    "candidate": {
+      "kind": "document",
+      "page": 2,
+      "quote": "座席数が12席を超える場合、安全検査報告書を持参してください。"
+    },
+    "expectedAccepted": true
+  },
+  {
+    "id": "ja-step",
+    "source": "Synthetic fixture.\n---PAGE---\n申請書のコピーを保管してください。",
+    "candidate": {
+      "kind": "step",
+      "page": 2,
+      "quote": "申請書のコピーを保管してください。"
+    },
+    "expectedAccepted": true
+  },
+  {
+    "id": "fr-form",
+    "source": "Synthetic fixture.\n---PAGE---\nApportez un formulaire signé.",
+    "candidate": {
+      "kind": "document",
+      "page": 2,
+      "quote": "Apportez un formulaire signé."
+    },
+    "expectedAccepted": true
+  },
+  {
+    "id": "fr-date",
+    "source": "Synthetic fixture.\n---PAGE---\nDéposez la demande avant le 20 novembre 2026.",
+    "candidate": {
+      "kind": "deadline",
+      "page": 2,
+      "quote": "Déposez la demande avant le 20 novembre 2026."
+    },
+    "expectedAccepted": true
+  },
+  {
+    "id": "fr-condition",
+    "source": "Synthetic fixture.\n---PAGE---\nSi vous avez plus de 12 places, apportez un rapport d'inspection.",
+    "candidate": {
+      "kind": "document",
+      "page": 2,
+      "quote": "Si vous avez plus de 12 places, apportez un rapport d'inspection."
+    },
+    "expectedAccepted": true
+  },
+  {
+    "id": "fr-step",
+    "source": "Synthetic fixture.\n---PAGE---\nConservez une copie de votre demande.",
+    "candidate": {
+      "kind": "step",
+      "page": 2,
+      "quote": "Conservez une copie de votre demande."
+    },
+    "expectedAccepted": true
+  },
+  {
+    "id": "de-form",
+    "source": "Synthetic fixture.\n---PAGE---\nBringen Sie ein unterschriebenes Antragsformular mit.",
+    "candidate": {
+      "kind": "document",
+      "page": 2,
+      "quote": "Bringen Sie ein unterschriebenes Antragsformular mit."
+    },
+    "expectedAccepted": true
+  },
+  {
+    "id": "de-date",
+    "source": "Synthetic fixture.\n---PAGE---\nReichen Sie den Antrag bis zum 20. November 2026 ein.",
+    "candidate": {
+      "kind": "deadline",
+      "page": 2,
+      "quote": "Reichen Sie den Antrag bis zum 20. November 2026 ein."
+    },
+    "expectedAccepted": true
+  },
+  {
+    "id": "de-condition",
+    "source": "Synthetic fixture.\n---PAGE---\nWenn Sie mehr als 12 Plätze haben, bringen Sie einen Prüfbericht mit.",
+    "candidate": {
+      "kind": "document",
+      "page": 2,
+      "quote": "Wenn Sie mehr als 12 Plätze haben, bringen Sie einen Prüfbericht mit."
+    },
+    "expectedAccepted": true
+  },
+  {
+    "id": "de-step",
+    "source": "Synthetic fixture.\n---PAGE---\nBewahren Sie eine Kopie Ihres Antrags auf.",
+    "candidate": {
+      "kind": "step",
+      "page": 2,
+      "quote": "Bewahren Sie eine Kopie Ihres Antrags auf."
+    },
+    "expectedAccepted": true
+  },
+  {
+    "id": "bn-form",
+    "source": "Synthetic fixture.\n---PAGE---\nস্বাক্ষর করা আবেদনপত্র সঙ্গে আনুন।",
+    "candidate": {
+      "kind": "document",
+      "page": 2,
+      "quote": "স্বাক্ষর করা আবেদনপত্র সঙ্গে আনুন।"
+    },
+    "expectedAccepted": true
+  },
+  {
+    "id": "bn-step",
+    "source": "Synthetic fixture.\n---PAGE---\nআপনার আবেদনপত্রের একটি কপি রাখুন।",
+    "candidate": {
+      "kind": "step",
+      "page": 2,
+      "quote": "আপনার আবেদনপত্রের একটি কপি রাখুন।"
+    },
+    "expectedAccepted": true
+  },
+  {
+    "id": "arabic-form",
+    "source": "Synthetic fixture.\n---PAGE---\nأحضر استمارة طلب موقعة.",
+    "candidate": {
+      "kind": "document",
+      "page": 2,
+      "quote": "أحضر استمارة طلب موقعة."
+    },
+    "expectedAccepted": true
+  },
+  {
+    "id": "arabic-step",
+    "source": "Synthetic fixture.\n---PAGE---\nاحتفظ بنسخة من طلبك.",
+    "candidate": {
+      "kind": "step",
+      "page": 2,
+      "quote": "احتفظ بنسخة من طلبك."
+    },
+    "expectedAccepted": true
+  },
+  {
+    "id": "number-boundary",
+    "source": "Synthetic fixture.\n---PAGE---\nBring exactly 2 copies of the signed form.",
+    "candidate": {
+      "kind": "document",
+      "page": 2,
+      "quote": "Bring exactly 2 copies of the signed form."
+    },
+    "expectedAccepted": true
+  },
+  {
+    "id": "negative-boundary",
+    "source": "Synthetic fixture.\n---PAGE---\nIf a supervisor signs the form, you do not need an extra signature.",
+    "candidate": {
+      "kind": "step",
+      "page": 2,
+      "quote": "If a supervisor signs the form, you do not need an extra signature."
+    },
+    "expectedAccepted": true
+  }
+]
