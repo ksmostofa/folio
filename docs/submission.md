@@ -37,16 +37,16 @@ No criterion table supplies an objective probability of winning. The strongest n
 ## Local work completed
 
 - Source import/edit, quote-validated checklist, citation inspector and original/translation view.
-- Human applicability decisions and notes for each instruction.
+- Human applicability decisions and notes for each instruction. Reviewed status requires an opened source citation, a resolved applicability decision, and an explanation for any not-applicable decision. Checkpoint restore enforces the same gate.
 - Explicit local save, portable review checkpoints and citation revalidation on restore.
 - Text checklist and full evidence JSON exports.
 - Actual OpenAI-compatible Apertus adapter, required User-Agent, response size bound, two-call concurrency cap and connection cancellation.
 - Endpoint catalog diagnostic that makes no inference request.
-- 94 deterministic tests covering validator, multilingual fixtures, review restoration and proxy reliability.
+- 104 deterministic tests covering validator, multilingual fixtures, review restoration and proxy reliability.
 
 ## Blocking evidence
 
-An actual authorized Apertus key/local deployment and Rare UI license clearance remain unresolved. See [research/apertus-access.md](research/apertus-access.md). These blockers cannot be fixed by calling the demo output a model result or relabeling third-party code. The held-out real-model evaluation and recorded inference demo remain pending. A 25-case synthetic gold corpus and evaluation runner are ready; no synthetic mock test is presented as an Apertus benchmark.
+Actual target-model evaluation and its recorded demonstration remain pending. Rare UI now uses verified historical MIT source copies. See [research/apertus-access.md](research/apertus-access.md). Demo output must not be described as a model result. The held-out real-model evaluation and recorded inference demo remain pending. A 25-case synthetic gold corpus and evaluation runner are ready; no synthetic mock test is presented as an Apertus benchmark.
 
 ## Before submission
 

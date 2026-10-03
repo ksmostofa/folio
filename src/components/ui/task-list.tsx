@@ -1,5 +1,3 @@
-// Copyright (c) 2026 Swami Malode. MIT + Commons Clause + Attribution.
-// See licenses/rare-ui.txt and https://rareui.com.
 "use client";
 
 import { useState } from "react";

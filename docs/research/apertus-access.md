@@ -45,18 +45,15 @@ The official guide says Apertus models can be downloaded under Apache-2.0 and po
 
 ## Rare UI and event license
 
-The exact chosen library is https://rareui.com, backed by https://github.com/swamimalode07/rare-ui. Its actual LICENSE combines MIT wording with Commons Clause and visible attribution. It permits use inside an application but forbids selling, sublicensing or redistributing the components themselves. The source and footer now preserve its notices and attribution.
+Resolved for the copied components. We inspected the full official repository history and copied all three components exactly from `c9a745c9cc04376f5a1abbd62d5fae9ea589944b`, September18,2026. That tree includes the full plain-MIT grant, Copyright2026SwamiMalode. The repository introduced CommonsClause and attribution terms on September23; those newer copies are not used. Original/local hashes match, no local component edits were needed, and the full historical notice remains in licenses/rare-ui.txt.
 
-Hack Apertus terms say submitted source code and model weights use Apache-2.0, with CC-BY-4.0 for documentation/designs and CDLA-Permissive-2.0 for datasets. They also require compatible terms for pre-existing IP needed to use or develop the output. Event-specific licenses can supersede the general clause.
+See [../rareui-provenance.md](../rareui-provenance.md) for exact source paths, hashes and license links. The application still credits RareUI visibly. This pins legally supplied historical copies; it does not relabel current registry code. Other dependencies and overall event eligibility remain separate requirements.
 
-- Rare UI actual license: https://github.com/swamimalode07/rare-ui/blob/main/LICENSE
-- Event terms, section 6: https://hackapertus.ch/terms-and-conditions
-
-Those texts leave a material compatibility issue. Folio's Apache license cannot remove Rare UI's additional restriction. Organizer clearance or a separate compatible grant from the author is needed before treating the copied UI as compliant submission material. The instruction to keep Rare UI is honored; no unapproved replacement or relicensing was made. No organizer or author was contacted.
+Hack Apertus terms require Apache-2.0 original code/model weights, CC-BY-4.0 documentation/design, and CDLA-Permissive-2.0datasets, with compatible needed third-party materials. The pinned MIT components no longer require the previously identified CommonsClause clearance.
 
 ## Concrete remaining blockers
 
 1. Actual Apertus inference needs the organizer-issued CSCS team credentials, an owner-provided alternative provider key or a verified local deployment. Provider starter credit may cover testing, but no key or account is available in this session.
-2. Rare UI clearance against the event's output terms has not been obtained.
+2. The component license concern is resolved for the pinned historical MIT copies; maintain that exact provenance when updating.
 3. A real-model held-out evaluation and recorded demo cannot be completed honestly until item 1 is resolved. Existing validator tests and synthetic fixtures do not prove model accuracy.
 4. Registration, current submission portal instructions and final submission must use the user's authorized event account. No project was submitted by this code task.

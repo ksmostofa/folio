@@ -1,7 +1,16 @@
 import { exportChecklist, splitPages, validateCandidates } from './compiler.ts'
 import type { CompileResult } from './compiler.ts'
 export type Review = { applicability: 'unresolved' | 'applies' | 'not-applicable'; note: string }
-export type Checkpoint = { format: 'folio.review.v1'; source: string; title: string; language: string; result: CompileResult | null; completed: string[]; reviews: Record<string, Review> }
+export type Checkpoint = { format: 'folio.review.v1'; source: string; title: string; language: string; result: CompileResult | null; completed: string[]; inspected: string[]; reviews: Record<string, Review> }
+export function reviewCompletionIssue(review: Review | undefined, citationOpened: boolean): string | null {
+  if (!citationOpened) return 'Open this source citation before marking reviewed.'
+  if (!review || review.applicability === 'unresolved') return 'Decide whether this instruction applies before marking reviewed.'
+  if (review.applicability === 'not-applicable' && !review.note.trim()) return 'Explain why this instruction does not apply before marking reviewed.'
+  return null
+}
+export function completedAfterReviewChange(id: string, review: Review, completed: string[], inspected: string[]): string[] {
+  return reviewCompletionIssue(review, inspected.includes(id)) ? completed.filter(item => item !== id) : completed
+}
 export function restoreCheckpoint(value: unknown): Checkpoint | null {
   if (!value || typeof value !== 'object') return null
   const v = value as Record<string, unknown>
@@ -15,7 +24,8 @@ export function restoreCheckpoint(value: unknown): Checkpoint | null {
     result = { ...validation, mode: r.mode, questions: ['Restored checklist: verify source currency and applicability before acting.', 'Imported model metadata is user-supplied and does not prove an actual model call.'], ...(typeof r.model === 'string' ? { model: r.model.slice(0, 200) } : {}) }
   }
   const ids = new Set(result?.items.map(item => item.id) || [])
-  const completed = Array.isArray(v.completed) ? [...new Set(v.completed.filter(id => typeof id === 'string' && ids.has(id)))] as string[] : []
+  const requestedCompleted = Array.isArray(v.completed) ? [...new Set(v.completed.filter(id => typeof id === 'string' && ids.has(id)))] as string[] : []
+  const inspected = Array.isArray(v.inspected) ? [...new Set(v.inspected.filter(id => typeof id === 'string' && ids.has(id)))] as string[] : []
   const reviews: Record<string, Review> = {}
   if (v.reviews && typeof v.reviews === 'object') {
     for (const [id, entry] of Object.entries(v.reviews)) {
@@ -23,9 +33,10 @@ export function restoreCheckpoint(value: unknown): Checkpoint | null {
       reviews[id] = { applicability: entry.applicability, note: entry.note.slice(0, 1500) }
     }
   }
-  return { format: 'folio.review.v1', source: v.source, title: v.title.slice(0, 100), language: v.language, result, completed, reviews }
+  const completed = requestedCompleted.filter(id => !reviewCompletionIssue(reviews[id], inspected.includes(id)))
+  return { format: 'folio.review.v1', source: v.source, title: v.title.slice(0, 100), language: v.language, result, completed, inspected, reviews }
 }
 
 export function exportReviewedChecklist(result: CompileResult, completed: string[], reviews: Record<string, Review>): string {
-  return `${exportChecklist(result, completed)}\n\nHuman review notes (reviewer supplied)\n${result.items.map(item => { const review = reviews[item.id]; return `${item.id}: ${review?.applicability || 'unresolved'}${review?.note ? `\n    ${review.note}` : ''}` }).join('\n')}`
+  return `Checkmarks record completed source reviews. See human applicability decisions below.\n\n${exportChecklist(result, completed)}\n\nHuman review notes (reviewer supplied)\n${result.items.map(item => { const review = reviews[item.id]; return `${item.id}: ${review?.applicability || 'unresolved'}${review?.note ? `\n    ${review.note}` : ''}` }).join('\n')}`
 }

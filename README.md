@@ -1,5 +1,9 @@
 # Folio
 
+[Open the working demo](https://ksmostofa.github.io/folio/). [Public source repository](https://github.com/ksmostofa/folio).
+
+The public demo runs in the browser. Folio's live Apertus adapter runs separately with `npm start`; Pages does not host that server.
+
 A source-first form checklist workbench for Hack Apertus track 2B. Folio extracts instructions from numbered source pages, rejects quotes that do not match their cited page, retains conditional wording, and lets a person review original text beside translation drafts. It exports a checklist and a portable evidence ledger.
 
 The opening document is fictional. It is not municipal guidance. No live model call occurs in demo mode. A working prototype does not imply any predicted chance of winning.
@@ -45,7 +49,7 @@ Actual Apertus hosting, quantization and hardware sizing remain deployment work.
 4. Inspect the original page for each quote, assess conditional applicability and review translation drafts. Check an item when you have reviewed it.
 5. Export the text checklist or evidence JSON. JSON includes the full source, so handle the exported file with the same care as the imported document.
 
-Each instruction has a human applicability decision and a review note. These decisions do not claim that the model assessed your circumstances.
+Each instruction has a human applicability decision and a review note. To mark an item reviewed, first open its source citation and choose 'Applies to me' or 'Not applicable'. A 'Not applicable' decision also requires a nonblank explanation. Returning to 'Needs review' or removing that explanation clears the checked state. The same gate runs when restoring saved progress; older checkpoints without citation-open records retain notes but clear checked items. These decisions do not claim that the model assessed your circumstances.
 
 Saving is explicit and uses browser localStorage for the source, cited checklist, checked items, applicability decisions and notes. A review checkpoint can be exported and re-imported; Folio revalidates every saved quote and rejects any source mismatch. Imported model metadata is clearly marked as unverified. JSON checkpoint imports can be up to 2 MB, while text imports stay below 150 KB. Clear saved document removes Folio's stored document in that browser. Clearing cannot delete previously downloaded files or data already sent to a live provider.
 
@@ -62,7 +66,7 @@ node --test tests/*.test.mjs
 npm run build
 ```
 
-`tests/compiler.test.mjs` covers 30 deterministic cases, including invented quotes, page mismatches, date mutation, removed conditional clauses, duplicate quotes, invalid output, unsupported demo languages and evidence exports. `tests/fixtures/citation-cases.json` supplies 24 multilingual synthetic fixtures, tested with exact and wrong-page citations. Four local mock-endpoint tests verify fail-closed configuration, validated proxy output, response bounds and concurrency limits. Review checkpoint tests cover round-trip state, forged pages, edited source, invalid review decisions and unknown IDs. API tests verify bounded responses and two-call concurrency limits. All 94 tests pass. These tests do not measure Apertus accuracy. Live Apertus quality, cost and latency must be measured separately before submission.
+`tests/compiler.test.mjs` covers 30 deterministic cases, including invented quotes, page mismatches, date mutation, removed conditional clauses, duplicate quotes, invalid output, unsupported demo languages and evidence exports. `tests/fixtures/citation-cases.json` supplies 24 multilingual synthetic fixtures, tested with exact and wrong-page citations. Four local mock-endpoint tests verify fail-closed configuration, validated proxy output, response bounds and concurrency limits. Review checkpoint tests cover round-trip state, forged pages, edited source, invalid review decisions and unknown IDs. API tests verify bounded responses and two-call concurrency limits. All 104 tests pass. These tests do not measure Apertus accuracy. Live Apertus quality, cost and latency must be measured separately before submission.
 
 ## Real Apertus access
 
@@ -94,6 +98,6 @@ The UI uses the requested shadcn Luma preset `b1VlJBjs` and selected RareUI comp
 
 ## Component credits
 
-[shadcn/ui](https://ui.shadcn.com) uses its MIT license. [Rare UI](https://rareui.com) components retain MIT + Commons Clause + Attribution. See `licenses/rare-ui.txt`.
+[shadcn/ui](https://ui.shadcn.com) uses its MIT license. [Rare UI](https://rareui.com) components use the exact plain-MIT upstream snapshot `c9a745c9cc04376f5a1abbd62d5fae9ea589944b`. Full copyright and permission notice is retained in `licenses/rare-ui.txt`; source hashes and license history are in [docs/rareui-provenance.md](docs/rareui-provenance.md). Current registry copies have different terms and are not used.
 
-**Submission blocker:** Rare UI's Commons Clause has not been cleared against Hack Apertus's Apache-2.0-compatible output terms. Obtain organizer clearance before submission. Original application licensing does not relicense the copied UI components.
+The earlier Rare UI component-license blocker is resolved by using verified historical MIT-licensed copies. Original application licensing does not relicense other dependencies.

@@ -50,3 +50,5 @@
 .item-review label { font-size:14px; }
 .item-review input { grid-column:1/-1;font-size:14px; }
 @media(max-width:550px) { .item-review { grid-template-columns:1fr; }.item-review input { grid-column:auto; }.item-review [data-slot="select-trigger"] { width:100%; } }
+
+.review-gate { grid-column:1/-1;font-size:12px;line-height:1.6;color:var(--muted-foreground); }

@@ -1,5 +1,5 @@
-// Copyright (c) 2026 Swami Malode. MIT + Commons Clause + Attribution.
-// See licenses/rare-ui.txt and https://rareui.com.
+'use client'
+
 import { Copy } from 'lucide-react'
 import { AnimatePresence, motion, useReducedMotion } from 'motion/react'
 import { Highlight, type PrismTheme } from 'prism-react-renderer'
