@@ -45,7 +45,7 @@ The official guide says Apertus models can be downloaded under Apache-2.0 and po
 
 ## Rare UI and event license
 
-Resolved for the copied components. We inspected the full official repository history and copied all three components exactly from `c9a745c9cc04376f5a1abbd62d5fae9ea589944b`, September18,2026. That tree includes the full plain-MIT grant, Copyright2026SwamiMalode. The repository introduced CommonsClause and attribution terms on September23; those newer copies are not used. Original/local hashes match, no local component edits were needed, and the full historical notice remains in licenses/rare-ui.txt.
+Resolved for the copied components. We inspected the full official repository history and copied all three components exactly from `c9a745c9cc04376f5a1abbd62d5fae9ea589944b`, September 18, 2026. That tree includes the full plain-MIT grant, Copyright 2026 Swami Malode. The repository introduced CommonsClause and attribution terms on September23; those newer copies are not used. Original/local hashes match, no local component edits were needed, and the full historical notice remains in licenses/rare-ui.txt.
 
 See [../rareui-provenance.md](../rareui-provenance.md) for exact source paths, hashes and license links. The application still credits RareUI visibly. This pins legally supplied historical copies; it does not relabel current registry code. Other dependencies and overall event eligibility remain separate requirements.
 
@@ -57,3 +57,7 @@ Hack Apertus terms require Apache-2.0 original code/model weights, CC-BY-4.0 doc
 2. The component license concern is resolved for the pinned historical MIT copies; maintain that exact provenance when updating.
 3. A real-model held-out evaluation and recorded demo cannot be completed honestly until item 1 is resolved. Existing validator tests and synthetic fixtures do not prove model accuracy.
 4. Registration, current submission portal instructions and final submission must use the user's authorized event account. No project was submitted by this code task.
+
+## Actual local inference result
+
+The official public `swiss-ai/Apertus-v1.1-0.5B-Instruct` model was checksum verified and tested on CPU. The unchanged Folio prompt achieved 0/5 exact extractions; all five baseline candidates were rejected. A simpler prompt also failed, with one incorrect classification accepted by exact quote validation. The real Folio HTTP integration worked. These results and reproduction scripts are in [../../local-apertus/README.md](../../local-apertus/README.md). Mini eligibility for this event remains unconfirmed; the current target-model evaluation remains pending.

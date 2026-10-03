@@ -46,7 +46,7 @@ No criterion table supplies an objective probability of winning. The strongest n
 
 ## Blocking evidence
 
-Actual target-model evaluation and its recorded demonstration remain pending. Rare UI now uses verified historical MIT source copies. See [research/apertus-access.md](research/apertus-access.md). Demo output must not be described as a model result. The held-out real-model evaluation and recorded inference demo remain pending. A 25-case synthetic gold corpus and evaluation runner are ready; no synthetic mock test is presented as an Apertus benchmark.
+Actual target-model evaluation and its recorded demonstration remain pending. A real five-case CPU Apertus Mini baseline produced zero correct extractions; all baseline candidates were rejected. A separate prompt experiment produced four malformed responses and one false accepted classification. Exact citations do not guarantee correct classification. Reproducible scripts and all raw results are in `local-apertus/`. Mini event eligibility remains unconfirmed. Rare UI now uses verified historical MIT source copies. See [research/apertus-access.md](research/apertus-access.md). Demo output must not be described as a model result. The held-out real-model evaluation and recorded inference demo remain pending. A 25-case synthetic gold corpus and evaluation runner are ready; no synthetic mock test is presented as an Apertus benchmark.
 
 ## Before submission
 

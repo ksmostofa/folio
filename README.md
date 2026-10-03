@@ -74,7 +74,7 @@ The official [event resources](https://hackapertus.devpost.com/resources) provid
 
 The alternative documented Public AI base URL is `https://api.publicai.co/v1` with example model `swiss-ai/apertus-v1.5-8b`. A personal API key is required. Current provider docs state $2 starter credit, not unlimited free inference. Folio sends the required identifying User-Agent. After configuring your own authorized key, `node scripts/check-endpoint.mjs` verifies model discovery without making an inference call. With a `.env` file, Node 24 supports `node --env-file=.env scripts/check-endpoint.mjs` and `node --env-file=.env server.mjs`.
 
-See [docs/research/apertus-access.md](docs/research/apertus-access.md) for primary sources, local hardware assessment and exact outstanding access/license blockers. No actual Apertus inference has run in this session.
+See [docs/research/apertus-access.md](docs/research/apertus-access.md) for primary sources, local hardware assessment and remaining target-model access requirements and the resolved component-license issue. Real Apertus Mini CPU inference and the actual Folio API route have now been measured; see [local-apertus/README.md](local-apertus/README.md). Mini failed the tested extraction task and its event eligibility remains unconfirmed.
 
 ## Reproducible real-model evaluation
 
@@ -84,7 +84,7 @@ See [docs/research/apertus-access.md](docs/research/apertus-access.md) for prima
 node scripts/evaluate.mjs tests/fixtures/extraction-gold.json folio-evaluation.json
 ```
 
-The runner calls the actual configured model through the local server, records exact quote/type/page precision and recall, tokens and duration, and checkpoints results after every case. It stops on the first API error without retries. The output explicitly identifies synthetic data and does not evaluate translation quality. No real model evaluation report exists yet. Runner tests use mock endpoints and do not count as Apertus results.
+The runner calls the actual configured model through the local server, records exact quote/type/page precision and recall, tokens and duration, and checkpoints results after every case. It stops on the first API error without retries. The output explicitly identifies synthetic data and does not evaluate translation quality. The separate five-case real Mini experiment and raw failures are published in `local-apertus/`. A target-model 25-case report remains pending. Runner unit tests use mock endpoints and do not count as Apertus results.
 
 The GitHub Pages workflow builds a static demo. Citation inspection, reviewer decisions, saves and exports work there, while live mode stays disabled when `/api/status` is unavailable. The optional backend runs through `npm start`.
 

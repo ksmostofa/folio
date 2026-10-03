@@ -1,0 +1,48 @@
+{
+  "model_health": {
+    "ready": true,
+    "model": "swiss-ai/Apertus-v1.1-0.5B-Instruct",
+    "revision": "a140fd61fb57422c36a26301caea17edee799874",
+    "load_seconds": 0.7055082520000724,
+    "device": "cpu"
+  },
+  "catalog": {
+    "object": "list",
+    "data": [
+      {
+        "id": "swiss-ai/Apertus-v1.1-0.5B-Instruct",
+        "object": "model",
+        "owned_by": "swiss-ai"
+      }
+    ]
+  },
+  "folio_status": {
+    "ready": true,
+    "model": "swiss-ai/Apertus-v1.1-0.5B-Instruct",
+    "connectionVerified": false
+  },
+  "fixture": "en-form",
+  "real_inference": true,
+  "synthetic": true,
+  "result": {
+    "items": [],
+    "rejected": [
+      {
+        "index": 0,
+        "reason": "Unknown requirement type."
+      }
+    ],
+    "mode": "live",
+    "model": "swiss-ai/Apertus-v1.1-0.5B-Instruct",
+    "elapsedMs": 5240,
+    "usage": {
+      "prompt_tokens": 202,
+      "completion_tokens": 40
+    },
+    "questions": [
+      "Check which conditional instructions apply to you.",
+      "Confirm the source is authentic and current. Verify translation drafts before relying on them."
+    ]
+  },
+  "elapsed_seconds": 5.242752209999935
+}
