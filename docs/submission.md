@@ -13,7 +13,7 @@ Target: Hack Apertus, track 2B. The event and its official materials must be rec
 - https://hackapertus.ch/
 - https://hackapertus.ch/terms-and-conditions
 
-The parent research task identifies the deadline as 16 October 2026, 19:00 JST. Check the official submission portal and track terms before relying on that time.
+The official [Devpost rules](https://hackapertus.devpost.com/rules) set the deadline to 16 October 2026, 12:00 CEST, which is 19:00 JST. Check the official submission portal and track terms before relying on that time.
 
 | Criterion | Concrete demonstration | Remaining evidence |
 | --- | --- | --- |
@@ -34,8 +34,23 @@ No criterion table supplies an objective probability of winning. The strongest n
 - 2:00-2:30: Review supported items and export the evidence JSON. Show original quote, page, translation and completion state.
 - 2:30-3:00: Describe a sovereign deployment configuration and the work that remains. Report measured evaluation results, not estimated model accuracy.
 
+## Local work completed
+
+- Source import/edit, quote-validated checklist, citation inspector and original/translation view.
+- Human applicability decisions and notes for each instruction.
+- Explicit local save, portable review checkpoints and citation revalidation on restore.
+- Text checklist and full evidence JSON exports.
+- Actual OpenAI-compatible Apertus adapter, required User-Agent, response size bound, two-call concurrency cap and connection cancellation.
+- Endpoint catalog diagnostic that makes no inference request.
+- 94 deterministic tests covering validator, multilingual fixtures, review restoration and proxy reliability.
+
+## Blocking evidence
+
+An actual authorized Apertus key/local deployment and Rare UI license clearance remain unresolved. See [research/apertus-access.md](research/apertus-access.md). These blockers cannot be fixed by calling the demo output a model result or relabeling third-party code. The held-out real-model evaluation and recorded inference demo remain pending. A 25-case synthetic gold corpus and evaluation runner are ready; no synthetic mock test is presented as an Apertus benchmark.
+
 ## Before submission
 
+- Redeem CSCS inference access through the official [event resources](https://hackapertus.devpost.com/resources) and Getting Started guide; it is available to all teams.
 - Confirm track 2B eligibility, permitted external services, team composition, presentation format and exact deadline in the official portal.
 - Run the prototype against the actual Apertus model selected for the event. Capture model ID, endpoint deployment location, model license, hardware, tokens, latency and cost.
 - Use consented or public sources with clear licenses. Keep private applicant documents out of a public demo and repository.

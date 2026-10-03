@@ -45,3 +45,8 @@
 .evidence-meta { flex-wrap:wrap; }
 .evidence-meta .citation-link { height:30px; }
 .folio-footer a { text-decoration:underline;text-underline-offset:3px; }
+
+.item-review { display:grid;grid-template-columns:1fr auto;gap:10px;margin-top:16px;padding-top:14px;border-top:1px solid var(--border);align-items:center; }
+.item-review label { font-size:14px; }
+.item-review input { grid-column:1/-1;font-size:14px; }
+@media(max-width:550px) { .item-review { grid-template-columns:1fr; }.item-review input { grid-column:auto; }.item-review [data-slot="select-trigger"] { width:100%; } }

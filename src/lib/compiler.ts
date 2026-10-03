@@ -41,9 +41,12 @@ export function validateCandidates(raw: unknown, pages: Page[]): Pick<CompileRes
     if (!page || !page.text.includes(c.quote)) { rejected.push({ index, reason: 'Citation does not match that source page exactly.' }); return }
     // Do not accept a fragment cut out of a sentence, especially a removed condition.
     const start = page.text.indexOf(c.quote)
-    const before = start === 0 ? '' : page.text[start - 1]
+    const prefix = page.text.slice(0, start)
+    const previousLine = prefix.trimEnd().split('\n').at(-1) || ''
+    const followsConditionalLine = /\n[ \t]*$/.test(prefix) && /^(If|Unless|When|Si |Wenn|Falls)\b|場合/.test(previousLine) && /[,，:：]$/.test(previousLine)
+    const validStart = /(?:^|[\n.!?。！？])\s*$/.test(prefix) && !followsConditionalLine
     const after = page.text[start + c.quote.length] ?? ''
-    if ((before && !/[\n.!?。！？]/.test(before)) || (after && !/[\n.!?。！？]/.test(after) && !/[.!?。！？]$/.test(c.quote))) { rejected.push({ index, reason: 'Quote must preserve a complete source sentence or line, including conditions.' }); return }
+    if (!validStart || (after && !/[\n.!?。！？]/.test(after) && !/[.!?。！？]$/.test(c.quote))) { rejected.push({ index, reason: 'Quote must preserve a complete source sentence or line, including conditions.' }); return }
     const key = `${c.page}:${c.quote}`
     if (seen.has(key)) { rejected.push({ index, reason: 'Duplicate citation.' }); return }
     seen.add(key)
